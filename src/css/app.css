@@ -1,0 +1,16 @@
+/* Your app styles here */
+.pull-right {
+  float: right !important;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.m-t-8 {
+  margin-top: 8px;
+}
+
+.blank-image {
+  min-height: 300px !important;
+}
