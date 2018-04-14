@@ -13,6 +13,8 @@ const webpackConfig = require('./webpack.prod.conf');
 const fs = require('fs');
 const fixStaticPath = require('./fix-static-path');
 
+var archiver = require('archiver');
+
 const spinner = ora('building for production...');
 spinner.start();
 
@@ -35,6 +37,33 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
       console.log(chalk.red('  Build failed with errors.\n'));
       process.exit(1)
     }
+
+    /*
+     var projectPath = path.resolve(__dirname, '../www/project.zip');
+     var output = fs.createWriteStream(projectPath);
+     var archive = archiver('zip', {
+     zlib: { level: 9 } // Sets the compression level.
+     });
+     output.on('close', function() {
+     console.log(archive.pointer() + ' total bytes');
+     console.log('archiver has been finalized and the output file descriptor has closed.');
+     });
+     output.on('end', function() {
+     console.log('Data has been drained');
+     });
+     archive.pipe(output);
+
+     archive.glob(projectPath + '/!*');
+
+     fs.readdir(projectPath, (err, files) => {
+     files.forEach(file => {
+     console.log(file);
+     });
+     })
+
+     archive.append('string cheese!', { name: 'file2.txt' });
+     archive.finalize()
+     */
 
     console.log(chalk.cyan('  Build complete.\n'));
     console.log(chalk.yellow(

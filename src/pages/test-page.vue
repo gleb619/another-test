@@ -28,7 +28,7 @@
         </p>
       </f7-card-content>
       <f7-card-footer>
-        <f7-link :color="item.color">
+        <f7-link :color="item.color" @click="toFavorite(item)">
           <f7-icon f7="heart" class="m-t-8"></f7-icon>
         </f7-link>
         <f7-link :text="item.price"></f7-link>
@@ -88,28 +88,32 @@
         if (!self.allowInfinite) return;
         self.allowInfinite = false;
 
-        setTimeout(() = > {
-          if (self.items.length >= 200
-      )
-        {
-          self.showPreloader = false;
-          return;
-        }
+        setTimeout(() => {
+            if (self.items.length >= 200){
+              self.showPreloader = false;
+              return;
+            }
 
-        const itemsLength = self.items.length;
+          const itemsLength = self.items.length;
 
-        for (let i = 1; i <= 20; i += 1) {
-          self.items.push({
-            price: '$' + (itemsLength + i + 1000),
-            style: 'background-image:url(https://picsum.photos/640/480/?random);'
-          });
-        }
+          for (let i = 1; i <= 20; i += 1) {
+            self.items.push({
+              price: '$' + (itemsLength + i + 1000),
+              style: 'background-image:url(https://picsum.photos/640/480/?random);'
+            });
+          }
 
-        self.allowInfinite = true;
+          self.allowInfinite = true;
       },
         1000
       )
       };;,
+      toFavorite(item) {
+        console.info("item: ", item);
+        const self = this;
+        var index = self.items.indexOf(item);
+        self.items[index].color = (item.color ? "blue" : "red");
+      }
     },
   }
 </script>

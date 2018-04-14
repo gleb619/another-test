@@ -8,13 +8,11 @@
     created: function () {
       const self = this;
 
-      setTimeout(() = > {
+      setTimeout(() => {
         self.$f7router.navigate('/test/')
-    },
-      1000
-      )
+      }, 1000)
     }
-  };
+  };;
 </script>
 <style>
   .center {
