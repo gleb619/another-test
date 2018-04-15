@@ -11,6 +11,14 @@
   margin-top: 8px;
 }
 
+.p-t-8 {
+  padding-top: 8px;
+}
+
+.p-t-5 {
+  padding-top: 5px;
+}
+
 .blank-image {
   min-height: 300px !important;
 }

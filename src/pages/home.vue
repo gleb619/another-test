@@ -139,7 +139,7 @@
       <!--<f7-list-item :title="key" group-title></f7-list-item>-->
       <!--<f7-list-item v-for="name in group" :title="name"></f7-list-item>-->
       <!--</f7-list-group>-->
-      <f7-list-group v-for="contact in contacts.A">
+      <f7-list-group v-for="(contact, $index) in contacts.A" :key="$index">
         <f7-list-item :title="contact"></f7-list-item>
       </f7-list-group>
     </f7-list>

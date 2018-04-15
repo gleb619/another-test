@@ -9,6 +9,7 @@ import PanelLeftPage from './pages/panel-left.vue';
 import PanelRightPage from './pages/panel-right.vue';
 import TestPage from './pages/test-page.vue';
 import MenuPage from './pages/menu.vue';
+import ItemDetailsPage from './pages/item-details.vue';
 
 export default [
   {
@@ -47,6 +48,10 @@ export default [
   {
     path: '/menu/',
     component: MenuPage,
+  },
+  {
+    path: '/item-details/:id',
+    component: ItemDetailsPage,
   },
   {
     path: '(.*)',

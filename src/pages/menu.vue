@@ -9,11 +9,12 @@
     <f7-list>
       <f7-list-item link="/search/" view="#main-view" title="Search" panel-close></f7-list-item>
       <f7-list-item link="/favorites/" view="#main-view" title="Favorites" panel-close></f7-list-item>
+      <f7-list-item external link="http://www.auctionexport.com/" title="Open origin site" panel-close></f7-list-item>
     </f7-list>
     <f7-block-title>Other</f7-block-title>
     <f7-list>
-      <f7-list-item link="/about/" title="About"></f7-list-item>
-      <f7-list-item external link="http://www.auctionexport.com/" title="Open origin site"></f7-list-item>
+      <f7-list-item link="/about/" title="About" view="#main-view" panel-close></f7-list-item>
+      <f7-list-item link="/form/" title="Form" view="#main-view" panel-close></f7-list-item>
     </f7-list>
   </f7-page>
 </template>

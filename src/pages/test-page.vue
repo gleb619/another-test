@@ -5,9 +5,6 @@
         <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
       </f7-nav-left>
       <f7-nav-title>My App</f7-nav-title>
-      <f7-nav-right>
-        <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="right"></f7-link>
-      </f7-nav-right>
     </f7-navbar>
     <f7-card class="demo-card-header-pic" v-for="(item, index) in items" :key="index">
       <f7-card-header
@@ -32,7 +29,7 @@
           <f7-icon f7="heart" class="m-t-8"></f7-icon>
         </f7-link>
         <f7-link :text="item.price"></f7-link>
-        <f7-link>Read more</f7-link>
+        <f7-link :href="'/item-details/' + item.id" text="Read more"></f7-link>
       </f7-card-footer>
     </f7-card>
   </f7-page>
@@ -41,48 +38,38 @@
   export default {
     data() {
       return {
-        items: [{
-          style: 'background-image:url(https://placeimg.com/640/480/tech);',
-          price: '12$'
-        }, {
-          style: 'background-image:url(https://picsum.photos/640/480/?random);',
-          price: '12$'
-        }, {
-          color: "red",
-          style: 'background-image:url(http://pipsum.com/640x480.jpg);',
-          price: '53$'
-        }, {
-          style: 'background-image:url(https://picsum.photos/640/480/?random);',
-          price: '5654$'
-        }, {
-          style: 'background-image:url(https://placeimg.com/640/480/tech);',
-          price: '546$'
-        }, {
-          style: 'background-image:url(https://picsum.photos/640/480/?random);',
-          price: '856$'
-        }, {
-          style: 'background-image:url(https://placeimg.com/640/480/tech);',
-          price: '873$'
-        }, {
-          color: "red",
-          style: 'background-image:url(https://placeimg.com/640/480/tech);',
-          price: '342$'
-        }],
+        items: [],
+        images: [
+          'background-image:url(https://placeimg.com/640/480/tech);',
+          'background-image:url(https://picsum.photos/640/480/?random);',
+          'background-image:url(http://pipsum.com/640x480.jpg);'
+        ],
         allowInfinite: true,
         lastItem: 20,
         showPreloader: true,
       };
     },
-    created: function () {
+    created() {
       const self = this;
-      for (let i = 0; i < 20; i++) {
-        self.items.push({
-          price: '$' + (i + 1000),
-          style: 'background-image:url(https://placeimg.com/640/480/tech);'
-        });
-      }
+      self.generateItems();
     },
     methods: {
+      generateItems: function () {
+        const self = this;
+        const itemsLength = self.items.length;
+
+        setTimeout(() => {
+          for (let i = 1; i <= 20; i += 1) {
+            let tempItem = {
+              id: (Math.floor(Math.random() * 100000)),
+              price: '$' + (itemsLength + i + (Math.floor(Math.random() * 1000))),
+              style: self.images[Math.floor(Math.random() * self.images.length)],
+              color: (Math.random() >= 0.5) ? "blue" : "red"
+            };
+            self.items.push(tempItem);
+          }
+        }, 1000);
+      },
       loadMore() {
         const self = this;
         if (!self.allowInfinite) return;
@@ -94,25 +81,13 @@
               return;
             }
 
-          const itemsLength = self.items.length;
-
-          for (let i = 1; i <= 20; i += 1) {
-            self.items.push({
-              price: '$' + (itemsLength + i + 1000),
-              style: 'background-image:url(https://picsum.photos/640/480/?random);'
-            });
-          }
-
+          self.generateItems();
           self.allowInfinite = true;
+        }, 100);
       },
-        1000
-      )
-      };;,
       toFavorite(item) {
-        console.info("item: ", item);
-        const self = this;
-        var index = self.items.indexOf(item);
-        self.items[index].color = (item.color ? "blue" : "red");
+        let newColor = (item.color == "red" ? "blue" : "red");
+        item.color = newColor;
       }
     },
   }

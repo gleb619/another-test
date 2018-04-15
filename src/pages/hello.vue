@@ -12,7 +12,7 @@
         self.$f7router.navigate('/test/')
       }, 1000)
     }
-  };;
+  };
 </script>
 <style>
   .center {
@@ -22,10 +22,4 @@
     vertical-align: middle;
     margin-top: 50%
   }
-
-  img {
-    animation-duration: 1s;
-    animation-delay: 0.1s;
-  }
-
 </style>
