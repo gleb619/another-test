@@ -1,6 +1,6 @@
 <template>
   <f7-page hide-navbar-on-scroll>
-    <f7-navbar title="Item detalization" back-link="Back"></f7-navbar>
+    <f7-navbar title="Item $f7route.params[id]" back-link="Back"></f7-navbar>
     <div v-if="!loading">
       <img :src="item.image" :class="{ 'lazy lazy-fade-in': item.image }" v-if="item.image" class="w-100">
       <f7-block-title>Price</f7-block-title>

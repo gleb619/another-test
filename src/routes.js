@@ -10,6 +10,7 @@ import PanelRightPage from './pages/panel-right.vue';
 import TestPage from './pages/test-page.vue';
 import MenuPage from './pages/menu.vue';
 import ItemDetailsPage from './pages/item-details.vue';
+import SearchPage from './pages/search.vue';
 
 export default [
   {
@@ -52,6 +53,10 @@ export default [
   {
     path: '/item-details/:id',
     component: ItemDetailsPage,
+  },
+  {
+    path: '/search/',
+    component: SearchPage,
   },
   {
     path: '(.*)',
