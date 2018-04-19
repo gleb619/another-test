@@ -11,12 +11,20 @@
   margin-top: 8px;
 }
 
+.m-b-10 {
+  margin-top: 10px;
+}
+
 .p-t-8 {
   padding-top: 8px;
 }
 
 .p-t-5 {
   padding-top: 5px;
+}
+
+.p-b-10 {
+  padding-top: 10px;
 }
 
 .blank-image {

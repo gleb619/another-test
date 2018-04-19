@@ -93,5 +93,8 @@
   }
 </script>
 <style>
-
+  .blank-image {
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 </style>
