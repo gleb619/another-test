@@ -10,7 +10,7 @@
             <h2 class="no-margin">
               <span>{{item.price}}</span>
             </h2>
-            <small>+$265 fees</small>
+            <small class="color-gray">+$265 fees</small>
           </f7-col>
           <f7-col></f7-col>
           <f7-col>

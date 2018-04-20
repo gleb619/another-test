@@ -26,10 +26,10 @@
             </f7-list-item>
           </f7-list>
         </f7-block>
+        <f7-button round class="bottom-button" href="/search-details/">Search</f7-button>
       </f7-tab>
       <f7-tab id="tab-2" class="page-content1">
         <f7-block>
-          <f7-block-title>Form Example</f7-block-title>
           <f7-list form>
             <f7-list-item>
               <f7-row>
@@ -89,38 +89,40 @@
             </f7-list-item>
           </f7-list>
         </f7-block>
+        <f7-button round href="/search-details/">Search</f7-button>
       </f7-tab>
       <f7-tab id="tab-3" class="page-content1">
         <f7-block>
           <f7-row>
-            <f7-col width="20"></f7-col>
-            <f7-col width="60" class="p-b-10 m-b-10" big raised>
+            <f7-col width="10"></f7-col>
+            <f7-col width="80" class="p-b-10 m-b-10" big raised>
               <f7-button fill>Dealer & Repo Inventory</f7-button>
             </f7-col>
-            <f7-col width="20"></f7-col>
+            <f7-col width="10"></f7-col>
           </f7-row>
           <f7-row>
-            <f7-col width="20"></f7-col>
-            <f7-col width="60" class="p-b-10 m-b-10" big>
+            <f7-col width="10"></f7-col>
+            <f7-col width="80" class="p-b-10 m-b-10" big>
               <f7-button fill>Buy Now Salvage</f7-button>
             </f7-col>
-            <f7-col width="20"></f7-col>
+            <f7-col width="10"></f7-col>
           </f7-row>
           <f7-row>
-            <f7-col width="20"></f7-col>
-            <f7-col width="60" class="p-b-10 m-b-10" big fill>
+            <f7-col width="10"></f7-col>
+            <f7-col width="80" class="p-b-10 m-b-10" big fill>
               <f7-button fill>Cars Under $1,000</f7-button>
             </f7-col>
-            <f7-col width="20"></f7-col>
+            <f7-col width="10"></f7-col>
           </f7-row>
           <f7-row>
-            <f7-col width="20"></f7-col>
-            <f7-col width="60" class="p-b-10 m-b-10" big outline>
+            <f7-col width="10"></f7-col>
+            <f7-col width="80" class="p-b-10 m-b-10" big outline>
               <f7-button fill>Classic Cars</f7-button>
             </f7-col>
-            <f7-col width="20"></f7-col>
+            <f7-col width="10"></f7-col>
           </f7-row>
         </f7-block>
+        <f7-button round class="bottom-button" href="/search-details/">Search</f7-button>
       </f7-tab>
     </f7-tabs>
   </f7-page>
@@ -264,5 +266,11 @@
   }
 </script>
 <style>
-
+  .bottom-button {
+    position: absolute;
+    margin-left: -50px;
+    left: 50%;
+    width: 100px;
+    bottom: 0px;
+  }
 </style>

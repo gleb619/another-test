@@ -11,6 +11,7 @@ import TestPage from './pages/test-page.vue';
 import MenuPage from './pages/menu.vue';
 import ItemDetailsPage from './pages/item-details.vue';
 import SearchPage from './pages/search.vue';
+import SearchDetailsPage from './pages/search-details.vue';
 
 export default [
   {
@@ -57,6 +58,10 @@ export default [
   {
     path: '/search/',
     component: SearchPage,
+  },
+  {
+    path: '/search-details/',
+    component: SearchDetailsPage,
   },
   {
     path: '(.*)',
